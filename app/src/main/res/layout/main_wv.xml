@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="100"
+    android:background="#FF5722"
+    android:backgroundTint="#FF5722">
+
+    <LinearLayout
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.09"
+        android:background="#673AB7"
+        android:backgroundTint="#673AB7"
+        android:gravity="start"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/downloadProgress"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="#673AB7"
+            android:src="@mipmap/yoke" />
+
+        <ImageButton
+            android:id="@+id/reconnectButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:backgroundTint="#673AB7"
+            android:backgroundTintMode="multiply"
+            android:contentDescription="@string/toolbar_reconnect"
+            android:onClick="reconnect"
+            android:src="@drawable/baseline_refresh_24"
+            android:tooltipText="@string/toolbar_reconnect" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="3.5pt"
+            android:layout_weight="0"
+            android:backgroundTint="#673AB7"
+            android:gravity="center"
+            android:text="@string/toolbar_connect_to" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#673AB7"
+            android:prompt="@string/dropdown_connect_to"
+            android:spinnerMode="dialog" />
+
+        <ImageButton
+            android:id="@+id/overflowButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:backgroundTint="#673AB7"
+            android:backgroundTintMode="multiply"
+            android:contentDescription="@string/toolbar_overflow"
+            android:onClick="showOverflowMenu"
+            android:src="@drawable/baseline_more_vert_24"
+            android:tooltipText="@string/toolbar_overflow" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/downloadProgress"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/webView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.01"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#EA0505"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.9"
+        tools:layout_editor_absoluteX="238dp">
+
+    </WebView>
+
+    <Button
+        android:id="@+id/fulltoggle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/baseline_fullscreen_24"
+        android:backgroundTint="#80000000"
+        android:backgroundTintMode="multiply"
+        android:text="F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/downloadProgress" />
+
+</android.support.constraint.ConstraintLayout>
